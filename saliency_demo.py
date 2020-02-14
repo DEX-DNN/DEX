@@ -20,7 +20,7 @@ val_dts = dts.get_val_dataset()
 allow_selector = True
 
 ' ---------------------------------------------------Testing with Mask Estimator -------------------------------------------'
-batch_size=2
+batch_size=16
 val_datas = dts.get_loader(val_dts, batch_size=batch_size,  Shuffle=True)
 saliency = SaliencyModel(resnet50encoder(pretrained=True, require_out_grad=False), 5, 64, 3, 64, fix_encoder=True, use_simple_activation=False, allow_selector=allow_selector, num_classes=1000)
 load_path='./yoursaliencymodel'
@@ -40,7 +40,7 @@ for it_step, batch in enumerate(val_datas):
         outputs = saliency_p(images)
     proposed_pre_masks= outputs[0]
     proposed_pre_masks = F.upsample(proposed_pre_masks, (images.size(2), images.size(3)), mode='bilinear')
-    proposed_post_masks=correct_masks_adversal(black_box_fn, images, proposed_pre_masks, targets, num_bins=32)
+    proposed_post_masks=correct_masks_adversal(black_box_fn, images, proposed_pre_masks, targets, num_bins=64)
     proposed_pre_masks=proposed_pre_masks.squeeze(dim=1).cpu()
 
     for it_number in range((batch_size)):
