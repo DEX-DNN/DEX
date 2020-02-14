@@ -1,7 +1,7 @@
 __all__ = ['ResNetEncoder', 'resnet50encoder']
 import torch
 import torch.utils.model_zoo as model_zoo
-from torchvision.models.resnet import ResNet, Bottleneck
+from .CNN_Models import ResNet, Bottleneck
 from .pytorch_fixes import adapt_to_image_domain
 from torch.autograd import Variable
 

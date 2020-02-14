@@ -20,7 +20,7 @@ val_dts = dts.get_val_dataset()
 allow_selector = True
 
 ' ---------------------------------------------------Testing with Mask Estimator -------------------------------------------'
-batch_size=16
+batch_size=2
 val_datas = dts.get_loader(val_dts, batch_size=batch_size,  Shuffle=True)
 saliency = SaliencyModel(resnet50encoder(pretrained=True, require_out_grad=False), 5, 64, 3, 64, fix_encoder=True, use_simple_activation=False, allow_selector=allow_selector, num_classes=1000)
 load_path='./yoursaliencymodel'
