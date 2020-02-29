@@ -12,12 +12,12 @@ To do this, we introduce a trainable relevance estimator that produces relevance
 
 ### Benifits of Skewed Distributions
 <p align="left">
-<img src="https://github.com/DEX-DNN/DEX/blob/master/Distributions.png" img width="350" height="200" />
+<img src="https://github.com/DEX-DNN/DEX/blob/master/Distributions.png" img width="380" height="220" />
 </p>
 
 ### Framework
 <p align="left">
-<img src="https://github.com/DEX-DNN/DEX/blob/master/Framework.png" img width="450" height="300" />
+<img src="https://github.com/DEX-DNN/DEX/blob/master/Framework.png" img width="400" height="280" />
 </p>
 
 ### Running the Demo
